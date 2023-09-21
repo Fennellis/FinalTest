@@ -1,4 +1,12 @@
-﻿class StringArray
+﻿Console.Write("Введите количество элементов массива: ");
+int amount = int.Parse(Console.ReadLine()!);
+
+string[] stringArray = StringArray.CreateStringArray(amount);
+Console.WriteLine($"Исходный массив -> [{string.Join(", ", stringArray)}]");
+string[] newStringArray = StringArray.SelectionArray(stringArray);
+Console.WriteLine($"Полученный массив -> [{string.Join(", ", newStringArray)}]");
+
+class StringArray
 {
     /// <summary>
     /// Создает массив строк длинной n
