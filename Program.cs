@@ -1,5 +1,11 @@
 ﻿Console.Write("Введите количество элементов массива: ");
-int amount = int.Parse(Console.ReadLine()!);
+string input = Console.ReadLine()!;
+if (input == "")
+{
+    Console.WriteLine("Некорректный ввод");
+    return;
+}
+int amount = int.Parse(input);
 
 string[] stringArray = StringArray.CreateStringArray(amount);
 Console.WriteLine($"Исходный массив -> [{string.Join(", ", stringArray)}]");
