@@ -36,17 +36,16 @@ class StringArray
     /// <returns>Возвращает получившийся массив строк</returns>
     public static string[] SelectionArray(string[] inputArray)
     {
-        string[] outputArray = Array.Empty<string>();
-        int n = 0;
+        Stack<string> stack = new();
         for (int i = 0; i < inputArray.Length; i++)
         {
             if (inputArray[i].Length <= 3)
             {
-                n++;
-                Array.Resize(ref outputArray, n);
-                outputArray[n - 1] = inputArray[i];
+                stack.Push(inputArray[i]);
             }
         }
+        string[] outputArray = stack.ToArray();
+        Array.Reverse(outputArray);
         return outputArray;
     }
 }
